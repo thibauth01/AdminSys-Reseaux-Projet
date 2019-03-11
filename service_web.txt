@@ -1,0 +1,6 @@
+Mise en place Service Web
+
+Installation NGNIX
+- sudo apt update
+- sudo apt install ngnix 
+
