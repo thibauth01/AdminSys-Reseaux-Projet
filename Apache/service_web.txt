@@ -1,6 +1,18 @@
+Lien Utilisé (Apache): 
+https://support.rackspace.com/how-to/installing-mysql-server-on-ubuntu/
+https://www.digitalocean.com/community/tutorials/how-to-configure-the-apache-web-server-on-an-ubuntu-or-debian-vps
+https://opensource.com/article/18/3/configuring-multiple-web-sites-apache
+
+Lien Utilisé(Nginx)(Facultatif):
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-debian-9
+https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/
+https://medium.com/@jgefroh/a-guide-to-using-nginx-for-static-websites-d96a9d034940
+http://nginx.org/en/docs/beginners_guide.html
+------------------------------------------------------------------------------------------------------------------------------
+
 Mise en place Service Web
 
-Installation Apache2
+----------Installation Apache2----------
 - sudo apt update
 - sudo apt install apache2 
 
@@ -80,5 +92,11 @@ Installation Apache2
   a2ensites intranet.wt2.ephec-ti.be
   a2ensites www.wt2.ephec-ti.be
   service apache2 restart
+  
+  
+  ------Installation MySql----------
+  sudo apt-get update
+  sudo apt-get install mysql-server
+  
   
   
