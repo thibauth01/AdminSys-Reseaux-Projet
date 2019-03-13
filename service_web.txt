@@ -1,6 +1,84 @@
 Mise en place Service Web
 
-Installation NGNIX
+Installation Apache2
 - sudo apt update
-- sudo apt install ngnix 
+- sudo apt install apache2 
 
+---------Fichier html----------
+
+  -> B2B (/var/www/b2b/index.html)
+<html>
+  <head>
+    <title>Test B2b</title>
+  </head>
+  <body>
+   <h1>Bonjour B2b</h1>
+  </body>
+</html>
+
+  -> Intranet(/var/www/intranet/index.html)
+<html>
+  <head>
+    <title>Test Intranet</title>
+  </head>
+  <body>
+   <h1>Bonjour Intranet</h1>
+  </body>
+</html>
+
+  -> Vitrine (/var/www/vitrine/index.html)
+<html>
+  <head>
+    <title>Test Vitrine</title>
+  </head>
+  <body>
+   <h1>Bonjour Vitrine</h1>
+  </body>
+</html>
+--------------------------------  
+
+---------Fichier Config---------
+
+  -> B2B (/etc/apache2/sites-available/b2b.wt2.ephec-ti.be.conf)
+  <VirtualHost *:80>
+      ServerName b2b.wt2.ephec-ti.be
+      DocumentRoot /var/www/b2b
+      <Directory /var/www/b2b/>
+              Options Indexes FollowSymLinks MultiViews
+              AllowOverride None
+              Order allow,deny
+              allow from all
+      </Directory>
+  </VirtualHost>
+  
+    -> Intranet (/etc/apache2/sites-available/intranet.wt2.ephec-ti.be.conf)
+  <VirtualHost *:80>
+      ServerName intranet.wt2.ephec-ti.be
+      DocumentRoot /var/www/intranet
+      <Directory /var/www/intranet/>
+              Options Indexes FollowSymLinks MultiViews
+              AllowOverride None
+              Order allow,deny
+              allow from all
+      </Directory>
+  </VirtualHost>
+  
+    -> Vitrine (/etc/apache2/sites-available/wt2.ephec-ti.be.conf)
+  <VirtualHost *:80>
+      ServerName www.wt2.ephec-ti.be
+      DocumentRoot /var/www/vitrine
+      <Directory /var/www/vitrine/>
+              Options Indexes FollowSymLinks MultiViews
+              AllowOverride None
+              Order allow,deny
+              allow from all
+      </Directory>
+  </VirtualHost>
+  ----------------------------
+  Rendre accessible:
+  a2ensites b2b.wt2.ephec-ti.be
+  a2ensites intranet.wt2.ephec-ti.be
+  a2ensites www.wt2.ephec-ti.be
+  service apache2 restart
+  
+  
