@@ -6,8 +6,27 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "wt2.ephec-ti.be" {
-	type master;
-	file "/etc/bind/db.wt2.ephec-ti.be";
+acl internals {
+	51.77.141.247;
+	51.77.144.85;
+	127.0.0.0/8;
+	172.20.0.0/24;
+};
+
+view "internal" {
+	match-clients { internals; };
+	recursion yes;
+	zone "wt2.ephec-ti.be" {
+		type master;
+		file "/etc/bind/internals/db.wt2.ephec-ti.be";
+	};
+};
+view "external" {
+	match-clients { any; };
+	recursion no;
+	zone "wt2.ephec-ti.be" {
+		type master;
+		file "/etc/bind/externals/db.wt2.ephec-ti.be";
+	};
 };
 

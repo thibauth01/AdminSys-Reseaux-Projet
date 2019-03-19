@@ -19,11 +19,6 @@ options {
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
 
-
-	// Disable the recursion
-	recursion no;
-	allow-transfer { none; };
-
 	dnssec-validation auto;
 
 	auth-nxdomain no;    # conform to RFC1035
