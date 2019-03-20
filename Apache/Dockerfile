@@ -2,8 +2,11 @@ FROM ubuntu:latest
 MAINTAINER Hermant Thibaut <t.hermant@students.ephec.be>
 
 # Install apache
-RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-$
-    apache2 curl
+RUN apt-get update
+RUN apt-get check
+RUN apt-get dist-upgrade -y
+
+RUN apt-get install -y apache2
 
 # Enable apache mods.
 #RUN a2enmod php5.0
