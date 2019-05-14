@@ -1,0 +1,18 @@
+version : '3'
+
+services :
+        voip:
+                build: .
+                image: voip
+                container_name: voip
+                ports:
+                        - "5038:5038/tcp"
+                        - "2000:2000/tcp"
+                        - "5060:5060/tcp"
+                        - "4520:4520/udp"
+                        - "4569:4569/udp"
+                        - "52722:52722/udp"
+                        - "2727:2727/udp"
+                        - "5000:5000/udp"
+                        - "5060:5060/udp"
+
