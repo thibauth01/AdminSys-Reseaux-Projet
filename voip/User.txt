@@ -1,0 +1,7 @@
+100: Secretaire
+105: Direction
+200: Ouvrier
+300: Service Comptable
+301: Comptable 1
+302: Comptable 2
+400: Comercial
