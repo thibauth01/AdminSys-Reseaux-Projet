@@ -4,15 +4,18 @@ RUN apt-get update && apt-get install -y asterisk
 
 RUN apt-get install -y vim net-tools
 
-EXPOSE 5038/tcp
-EXPOSE 2000/tcp
-EXPOSE 5060/tcp
-EXPOSE 4520/udp
-EXPOSE 4569/udp
-EXPOSE 52722/udp
-EXPOSE 2727/udp
-EXPOSE 5000/udp
 EXPOSE 5060/udp
+EXPOSE 16384/udp
+EXPOSE 16385/udp
+EXPOSE 16386/udp
+EXPOSE 16387/udp
+EXPOSE 16388/udp
+EXPOSE 16389/udp
+EXPOSE 16390/udp
+EXPOSE 16391/udp
+EXPOSE 16392/udp
+EXPOSE 16393/udp
+EXPOSE 16394/udp
 
 WORKDIR /etc/asterisk
 RUN cp extensions.conf extensions.conf.default
