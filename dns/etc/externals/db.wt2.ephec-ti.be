@@ -15,4 +15,5 @@ www	IN	A	51.77.144.85
 b2b	IN	CNAME	www
 
 _sip._udp	SRV	0	0	5060	sip
+_sip._tcp	SRV	0	0	5060	sip
 sip	IN	A	51.77.141.246

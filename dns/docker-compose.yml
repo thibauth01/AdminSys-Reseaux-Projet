@@ -3,9 +3,10 @@ version: '3'
 services:
         dns:
                 build: .
-                image: dns
+                image: he201459/dns
                 container_name: bind
                 ports:
                         - "51.77.141.246:53:53/tcp"
                         - "51.77.141.246:53:53/udp"
+                restart: always
 
