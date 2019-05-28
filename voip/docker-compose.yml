@@ -3,7 +3,7 @@ version : '3'
 services :
         voip:
                 build: .
-                image: voip
+                image: he201459/voip
                 container_name: voip
                 ports:
                         - "5060:5060/udp"
@@ -18,3 +18,4 @@ services :
                         - "16392:16392/udp"
                         - "16393:16393/udp"
                         - "16394:16394/udp"
+                restart: always
