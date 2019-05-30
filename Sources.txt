@@ -6,3 +6,4 @@ https://writing.pupius.co.uk/apache-and-php-on-docker-44faef716150
 https://www.crybit.com/deploy-apache-docker-container/
 https://www.vultr.com/docs/how-to-configure-ufw-firewall-on-ubuntu-14-04
 https://www.alibabacloud.com/blog/how-to-setup-email-server-with-postfix%2C-dovecot%2C-directmail-and-squirrelmail-on-ubuntu-16-04-alibaba-ecs_594092?fbclid=IwAR1mOhdB0HDV6QW-te8u83XqMYMWvVwkGMdo8ggdYoabFtZUMp7YFnggync
+https://www.linode.com/docs/email/running-a-mail-server/
