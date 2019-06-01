@@ -1,6 +1,7 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y asterisk
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y asterisk
 
 EXPOSE 5060/udp
 EXPOSE 16384/udp

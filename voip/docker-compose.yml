@@ -3,7 +3,7 @@ version : '3'
 services :
         voip:
                 build: .
-                image: he201459/voip
+                image: he201573/voip
                 container_name: voip
                 ports:
                         - "5060:5060/udp"

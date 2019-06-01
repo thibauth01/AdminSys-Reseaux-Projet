@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+        mail:
+                build: .
+                image: he201573/mail
+                container_name: mail
+                ports:
+                        - "456:456/tcp"
+                        - "25:25/tcp"
+                        - "587:587/tcp"
+                        - "110:110/tcp"
+                        - "995:995/tcp"
+                        - "143:143/tcp"
+                        - "993:993/tcp"
+                restart: always
+                networks:
+                        dmz:
+                                ipv4_address: 172.16.0.2
+                                aliases:
+                                        - "mail.wt2.ephec-ti.be"
+
+networks:
+        dmz:
+                ipam:
+                        driver: default
+                        config:
+                                - subnet: 172.16.0.0/24
+

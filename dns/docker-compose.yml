@@ -3,7 +3,7 @@ version: '3'
 services:
         dns:
                 build: .
-                image: he201459/dns
+                image: he201573/dns
                 container_name: bind
                 ports:
                         - "51.77.141.246:53:53/tcp"

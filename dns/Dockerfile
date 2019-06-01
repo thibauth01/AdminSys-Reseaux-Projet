@@ -1,6 +1,7 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y bind9
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y bind9
 
 RUN mkdir /etc/bind/externals
 RUN mkdir /etc/bind/internals
