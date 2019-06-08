@@ -35,6 +35,7 @@ smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
 myhostname = mail.wt2.ephec-ti.be
 mydomain = wt2.ephec-ti.be
+home_mailbox = inbox
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 mydestination = $myhostname, $mydomain, localhost.$mydomain, localhost

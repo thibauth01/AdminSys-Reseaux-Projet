@@ -14,6 +14,8 @@ services:
                         - "143:143/tcp"
                         - "993:993/tcp"
                 restart: always
+                volumes:
+                        - /var/mail:/var/mail
                 networks:
                         dmz:
                                 ipv4_address: 172.16.0.2

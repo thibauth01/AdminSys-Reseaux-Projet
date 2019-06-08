@@ -1,3 +1,6 @@
-contact:Hvyps3Mn::::/home/contact:/bin/bash
-admin:U4rZvHh7::::/home/admin:/bin/bash
-b2b:4GSTxUYT::::/home/b2b:/bin/bash
+contact:Hvyps3Mn::8::/var/mail/contact:/bin/bash
+admin:U4rZvHh7::8::/var/mail/admin:/bin/bash
+b2b:4GSTxUYT::8::/var/mail/b2b:/bin/bash
+direction:ErVqApb::8::/var/mail/direction:/bin/bash
+ouvrier:NqmByTb::8::/var/mail/ouvrier:/bin/bash
+comptable:EgDPdRN::8::/var/mail/comptable:/bin/bash

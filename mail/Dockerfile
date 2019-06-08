@@ -25,6 +25,8 @@ RUN chmod +x /start.sh
 
 COPY etc/hosts /etc/hosts
 
+VOLUME /var/mail
+
 EXPOSE 456
 # SMTP
 EXPOSE 25
