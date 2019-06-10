@@ -130,12 +130,46 @@
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 text-center border-primary">
-            <h2 class="font-weight-light text-primary" data-aos="fade"><button class="btn btn-primary text-white" type="button" id="button-addon2">Requête PHP </button></h2>
+            <h2 class="font-weight-light text-primary" data-aos="fade">
+
+                <form method="POST" action"" >
+                    <label for="inputNom">Nouveau Jouet : </label>
+                    <input class="" type="text" name="jouetNom" id="inputNom" placeholder="Ex: LEGO ...">
+                    <input class="btn btn-primary text-white" type="submit" name="sub" id="button-addon2" value="Ajouter">
+                </form>
+
+            </h2>
           </div>
         </div>
 
       </div>
     </div>
+
+  <?php
+
+    if ($_POST['sub']){
+      try{
+          $dbh = new PDO('mysql:host=172.18.0.2;dbname=woody','root','');
+          $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          //echo  ('Connecté !');
+
+          /* $sql = 'INSERT INTO Jouets(NOM) VALUES('.$_POST['jouetNom'].')';
+          $dbh->exec($sql); */
+
+          $sql = "INSERT INTO Jouets (NOM) VALUES (?)";
+          $stmt= $dbh->prepare($sql);
+          $stmt->execute([$_POST['jouetNom']]);
+
+          echo  ('Jouet ajouté !');
+      }
+      catch(exception $e) {
+          echo('Erreur '.$e->getMessage());
+      }
+
+
+    }
+  ?>
+
 
 
 
@@ -164,3 +198,4 @@
 
   </body>
 </html>
+
