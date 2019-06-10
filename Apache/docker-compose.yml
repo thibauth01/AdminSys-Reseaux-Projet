@@ -1,9 +1,12 @@
 version: '3'
 services:
   web:
-    image: web:vers06
+    image: web:vers07
     build: ./apache
     container_name: apache_web
     restart: always
     ports:
       - "80:80"
+      - "443:443"
+ 
+ 
