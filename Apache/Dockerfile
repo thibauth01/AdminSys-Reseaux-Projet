@@ -11,10 +11,23 @@ RUN apt-get dist-upgrade -y
 RUN apt-get install -y apache2
 RUN apt-get install -y php7.0
 RUN apt-get install -y libapache2-mod-php7.0
+RUN apt-get update
+RUN apt-get install -y php-mysql
 RUN apt-get install -y curl
-RUN apt-get install -y lynx-cur
+#RUN apt-get install -y lynx-curl
 
-#RUN apt-get install -y software-properties-common \
+#RUN apt-get update
+#RUN apt-get install -y software-properties-common
+#RUN add-apt-repository universe
+#RUN add-apt-repository ppa:certbot/certbot
+#RUN apt-get update
+#RUN apt-get install -y certbot python-certbot-apache 
+
+
+
+#RUN certbot --apache
+#RUN certbot --apache certonly
+
 #    && apt-add-repository ppa:ondrej/php \
 #   && apt-get update \
 #    && apt-get install php7.0 
@@ -24,11 +37,7 @@ RUN apt-get install -y lynx-cur
 # Enable apache mods.
 RUN a2enmod php7.0
 RUN a2enmod rewrite
-
-
-# Pour php
-#RUN sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php/7.0/apache2/php.ini
-#RUN sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php/7.0/apache2/php.ini
+RUN a2enmod ssl
 
 
 # Manually set up the apache environment variables
@@ -39,10 +48,10 @@ ENV APACHE_LOG_DIR /var/log/apache2
 ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_PID_FILE /var/run/apache2.pid
 
+
 RUN sed -i -e 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/7.0/fpm/php.ini
 
-# Expose
-EXPOSE 80
+
 
 # Copy files
 ADD www /var/www/site
@@ -56,5 +65,10 @@ ADD intranet.wt2.ephec-ti.be.conf /etc/apache2/sites-available
 ADD www.wt2.ephec-ti.be.conf /etc/apache2/sites-enabled/000-default.conf
 ADD b2b.wt2.ephec-ti.be.conf /etc/apache2/sites-enabled
 ADD intranet.wt2.ephec-ti.be.conf /etc/apache2/sites-enabled
+
+
+# Expose
+EXPOSE 80 443
+
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
