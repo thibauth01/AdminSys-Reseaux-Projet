@@ -1,0 +1,4 @@
+service mysql start
+mysql -u root
+mysql -u root < /tmp/DB.sql
+mysqladmin -u root  shutdown
